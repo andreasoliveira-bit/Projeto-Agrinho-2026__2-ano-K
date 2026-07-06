@@ -1,0 +1,306 @@
+/* =========================================================
+   Flashcards da Roça — AGRINHO 2026
+   Paleta: terra molhada, trigo e folha
+   ========================================================= */
+
+:root {
+  --soil-deep: #241708;
+  --soil: #3A2712;
+  --soil-light: #5C3E1F;
+  --wheat: #E3A93F;
+  --wheat-light: #F2CB7C;
+  --leaf: #5B8C3E;
+  --leaf-dark: #3E6329;
+  --parchment: #EFE3C2;
+  --parchment-light: #F8F2DE;
+  --ink: #2A1E10;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Nunito", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --radius-card: 18px;
+  --shadow-soft: 0 12px 24px rgba(36, 23, 8, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--soil-deep);
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 2px,
+      transparent 2px,
+      transparent 34px
+    );
+  color: var(--parchment-light);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  padding: 56px 24px 40px;
+  text-align: center;
+  border-bottom: 3px solid var(--soil-light);
+  background: linear-gradient(180deg, var(--soil) 0%, var(--soil-deep) 100%);
+}
+
+.header-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wheat-light);
+  margin: 0 0 10px;
+}
+
+.site-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: var(--parchment-light);
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: rgba(248, 242, 222, 0.78);
+  margin: 0 0 32px;
+}
+
+/* ---------- Progress: a growing furrow ---------- */
+
+.progress-field {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.progress-track {
+  position: relative;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  border: 1px solid rgba(227, 169, 63, 0.35);
+  overflow: visible;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--leaf-dark), var(--leaf));
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.progress-marker {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  transition: left 0.5s ease;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+.progress-label {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--wheat-light);
+}
+
+/* ---------- Deck grid ---------- */
+
+.field {
+  padding: 48px 24px 24px;
+}
+
+.deck {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+/* ---------- Flashcard ---------- */
+
+.card {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  perspective: 1200px;
+  height: 220px;
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+.card:nth-child(odd) {
+  transform: rotate(-0.6deg);
+}
+
+.card:nth-child(even) {
+  transform: rotate(0.6deg);
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--wheat-light);
+  outline-offset: 4px;
+}
+
+.card-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 20px;
+  border-radius: var(--radius-card);
+  backface-visibility: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.card-front {
+  background: linear-gradient(160deg, var(--soil-light) 0%, var(--soil) 100%);
+  border: 1px solid rgba(227, 169, 63, 0.3);
+}
+
+.card-back {
+  background: var(--parchment);
+  color: var(--ink);
+  transform: rotateY(180deg);
+  border: 1px solid rgba(60, 40, 20, 0.15);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wheat);
+  margin-bottom: 10px;
+}
+
+.card-front h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: var(--parchment-light);
+}
+
+.card-back p {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+
+.card-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.card:hover .card-front {
+  border-color: var(--wheat);
+}
+
+/* Mark cards already seen with a small leaf */
+.card.is-seen .card-tag::after {
+  content: " · visto";
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 32px 24px 48px;
+  font-size: 0.82rem;
+  color: rgba(248, 242, 222, 0.55);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 40px 18px 32px;
+  }
+
+  .field {
+    padding: 36px 16px 16px;
+  }
+
+  .deck {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    height: 180px;
+  }
+
+  .card-front h2 {
+    font-size: 1.1rem;
+  }
+
+  .card-back p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .deck {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .card-inner,
+  .progress-fill,
+  .progress-marker {
+    transition: none;
+  }
+}

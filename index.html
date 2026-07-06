@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards da Roça — AGRINHO 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">AGRINHO 2026 · Página web</p>
+      <h1>Flashcards da Roça</h1>
+      <p class="subtitle">Vire as cartas, plante o conhecimento sobre o campo e colha os pontos.</p>
+    </div>
+
+    <div class="progress-field" aria-label="Progresso da colheita de conhecimento">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+        <span class="progress-marker" id="progressMarker">🌱</span>
+      </div>
+      <span class="progress-label" id="progressLabel">0 de 10 sementes colhidas</span>
+    </div>
+  </header>
+
+  <main class="field">
+    <section class="deck" id="deck" aria-label="Baralho de flashcards">
+
+      <button class="card" data-index="1" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">🌾</span>
+            <span class="card-tag">Semente 01</span>
+            <h2>Agrinho</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>Programa educacional que leva temas do campo — agricultura, meio ambiente e cidadania — para a sala de aula, incentivando alunos a pesquisar e criar sobre a vida rural.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="2" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">🚜</span>
+            <span class="card-tag">Semente 02</span>
+            <h2>Agricultura Familiar</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>Modelo de produção rural conduzido pela própria família, responsável por grande parte dos alimentos que chegam à nossa mesa todos os dias.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="3" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">🟤</span>
+            <span class="card-tag">Semente 03</span>
+            <h2>Solo</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>É a base viva onde plantamos. Cuidar dele evita a erosão, mantém a terra fértil e garante boas colheitas por muito mais tempo.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="4" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">💧</span>
+            <span class="card-tag">Semente 04</span>
+            <h2>Água na Agricultura</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>Recurso essencial para a irrigação das plantações. Usar sistemas de gotejamento e aspersão evita desperdício e economiza um bem tão precioso.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="5" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">🐝</span>
+            <span class="card-tag">Semente 05</span>
+            <h2>Biodiversidade</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>A variedade de plantas, animais e insetos que vivem no campo. Abelhas e outros polinizadores são fundamentais para garantir boas colheitas.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="6" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">♻️</span>
+            <span class="card-tag">Semente 06</span>
+            <h2>Reciclagem no Campo</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>Embalagens de defensivos e restos de colheita podem virar matéria-prima nova, reduzindo o lixo e protegendo rios e nascentes da propriedade.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="7" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">🥗</span>
+            <span class="card-tag">Semente 07</span>
+            <h2>Alimentação Saudável</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>Frutas, verduras e legumes frescos vêm direto da roça até o prato. Comer bem começa por valorizar quem planta e colhe esses alimentos.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="8" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">📡</span>
+            <span class="card-tag">Semente 08</span>
+            <h2>Tecnologia no Campo</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>Drones, sensores e aplicativos ajudam o produtor a plantar, irrigar e colher com mais precisão, economizando tempo e recursos naturais.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="9" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">🌳</span>
+            <span class="card-tag">Semente 09</span>
+            <h2>Preservação Ambiental</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>Manter matas ciliares, nascentes e reservas legais protegidas garante um campo produtivo hoje e por muitas gerações futuras.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="card" data-index="10" type="button" aria-pressed="false">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-icon">🌍</span>
+            <span class="card-tag">Semente 10</span>
+            <h2>Sustentabilidade</h2>
+            <span class="card-hint">Toque para descobrir</span>
+          </span>
+          <span class="card-face card-back">
+            <p>Produzir alimentos hoje sem esgotar os recursos de amanhã — equilibrando economia, meio ambiente e bem-estar de quem vive no campo.</p>
+            <span class="card-hint">Toque para voltar</span>
+          </span>
+        </span>
+      </button>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Atividade da Unidade — Página web: construindo flashcards de estudo com HTML e CSS · Tema AGRINHO 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
